@@ -7,14 +7,13 @@ const db = require('../database/index.js')
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(express.json());
 
-app.get('/a', (req, res) => {
-  console.log("hello there");
-  res.send();
-})
+// app.get('/a', (req, res) => {
+//   // console.log("hello there");
+//   res.send();
+// })
 
 
 app.get('/api/:productId/', (req,res) => {
-  console.log('in app.get')
   let sendProductInfo = (err, data) => {
     if(err){
       console.log(err);
