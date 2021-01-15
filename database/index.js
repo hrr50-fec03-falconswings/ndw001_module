@@ -16,7 +16,15 @@ connection.connect( (err) => {
   }
 })
 
-// connect.readAll();
+connection.readOne = ( productId, callback ) => {
+  connection.query(`select * from Products where productId=${productId}`, (err, productData) => {
+    if(err){
+      callback(err, null);
+    } else {
+      callback(null, productData);
+    }
+  })
+}
 
 
 module.exports = connection;
