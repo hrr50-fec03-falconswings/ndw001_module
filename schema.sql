@@ -4,14 +4,14 @@ USE notWalmart;
 
 CREATE TABLE Products (
   productId int not null AUTO_INCREMENT,
-  name String,
+  name VARCHAR(250),
   rating Decimal (2,1),
   ratings_amt int,
   comments_amt int,
   price Decimal (5,2),
   amt_left Integer,
-  images String,
-  PRIMARY KEY (id)
+  images MEDIUMTEXT,
+  PRIMARY KEY (productId)
 )
 -- Each product has multiple pictures
 

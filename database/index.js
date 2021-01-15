@@ -2,7 +2,9 @@ const mysql = require('mysql');
 
 let connection = mysql.createConnection({
   host: 'localhost',
-  user: 'root'
+  user: 'root',
+  password: '',
+  database: 'notWalmart'
 
 });
 
@@ -13,6 +15,8 @@ connection.connect( (err) => {
     console.log('Connected to mySQL!');
   }
 })
+
+// connect.readAll();
 
 
 module.exports = connection;
