@@ -15,6 +15,7 @@ Pictures
 
 // Creates fake data
 for (let i = 1; i <= 100; i++) {
+  let picturesNum = Math.floor(Math.random() * Math.floor(3)) + 4;
   let name = faker.commerce.productName();
   let price = faker.commerce.price();
   let rating = (Math.floor(Math.random() * Math.floor(5)) + Math.random()).toFixed(1);
@@ -23,7 +24,7 @@ for (let i = 1; i <= 100; i++) {
   let randRemain = Math.floor(Math.random() * Math.floor(10));
   let picArr = [];
   // creates 7 pictures to add into images
-  for(let k = 0; k < 7; k++){
+  for(let k = 0; k < picturesNum; k++){
     let picture = faker.image.image();
     picArr.push(picture);
   }
