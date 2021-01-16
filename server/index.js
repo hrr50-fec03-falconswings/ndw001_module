@@ -7,14 +7,9 @@ const db = require('../database/index.js')
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(express.json());
 
-app.get('/a', (req, res) => {
-  console.log("hello there");
-  res.send();
-})
-
 
 app.get('/api/:productId/', (req,res) => {
-  console.log('in app.get')
+  // callback that will send data to client
   let sendProductInfo = (err, data) => {
     if(err){
       console.log(err);
@@ -22,10 +17,9 @@ app.get('/api/:productId/', (req,res) => {
       res.send(data);
     }
   }
+  // db will get data for specificied product in db
   db.readOne(req.params.productId, sendProductInfo );
 })
-
-
 
 app.listen(port, () => {
   console.log('Listening at PORT 3000');
