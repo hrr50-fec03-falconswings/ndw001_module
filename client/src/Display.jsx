@@ -1,4 +1,6 @@
 import React from 'react';
+import ProductInfo from '../src/ProductInfo.jsx';
+
 
 class Display extends React.Component{
   constructor(){
@@ -6,13 +8,13 @@ class Display extends React.Component{
 
   }
 
-
-
   render(){
     return(
       <div class='grid-container'>
         <div class='grid-item'>Photo Carousel</div>
-        <div class='grid-item'>Item Description</div>
+        <div class='grid-item'>
+          <ProductInfo />
+        </div>
       </div>
     )
   }
