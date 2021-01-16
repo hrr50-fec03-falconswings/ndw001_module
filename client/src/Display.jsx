@@ -10,8 +10,9 @@ class Display extends React.Component{
 
   render(){
     return(
-      <div>
-        Hello!
+      <div class='grid-container'>
+        <div class='grid-item'>Photo Carousel</div>
+        <div class='grid-item'>Item Description</div>
       </div>
     )
   }

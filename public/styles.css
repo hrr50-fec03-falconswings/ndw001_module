@@ -1,0 +1,21 @@
+
+@font-face {
+  font-family: BogleRegular;
+  src: url('Assets/bogle_font/OTF/Bogle-Regular.otf');
+}
+
+body {
+  font-family: BogleRegular;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-item {
+  font-size: 50px;
+  font-family: BogleRegular;
+}
+
+
