@@ -1,20 +1,14 @@
 import React from 'react';
 const axios = require('axios');
-import ReactDOM from 'react-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-import * as reg from '@fortawesome/free-regular-svg-icons'
-
-// const element = <FontAwesomeIcon icon={faCoffee} />
-
-// ReactDOM.render(element, document.body)
+import Ratings from '../src/Ratings.jsx';
 
 class ProductInfo extends React.Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
 
     this.state = {
-      currentProduct: 1
+      currentProduct: 1,
+      amount: 2
     }
 
   }
@@ -22,19 +16,17 @@ class ProductInfo extends React.Component{
 
   // }
 
+  //pass props into Ratings
+
   render(){
     return (
-      <div>
+      <div class="productInfo">
         <div class='productDescriptionTitle'>
           ProductName
         </div>
         <div class='productDescriptionMetrics'>
           <div class='stars'>
-            <FontAwesomeIcon id='star1'icon={faStar}/>
-            <FontAwesomeIcon id='star2'icon={faStar}/>
-            <FontAwesomeIcon id='star3'icon={faStar}/>
-            <FontAwesomeIcon id='star4'icon={faStar}/>
-            <FontAwesomeIcon id='star5'icon={reg.faStar}/>
+            <Ratings />
           </div>
           &nbsp; &nbsp;
           <div class='rating'>(0.0)</div>
@@ -44,6 +36,12 @@ class ProductInfo extends React.Component{
           <div class='commentsAmount'>  #Comments </div>
           &nbsp;&nbsp;
           <div class='storeSerial'> notWalmart#id </div>
+        </div>
+        <div class='price'>
+          Price
+        </div>
+        <div class='availability'>
+          {`Only ${this.state.amount} left!`}
         </div>
       </div>
     )

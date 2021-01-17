@@ -3,6 +3,10 @@
   font-family: BogleRegular;
   src: url('Assets/bogle_font/OTF/Bogle-Regular.otf');
 }
+@font-face {
+  font-family: BogleBold;
+  src: url('Assets/bogle_font/OTF/Bogle-Bold.otf');
+}
 
 body {
   font-family: BogleRegular;
@@ -10,7 +14,8 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .grid-item {
@@ -18,40 +23,68 @@ body {
   font-family: BogleRegular;
 }
 
+.productInfo {
+  display: grid;
+  grid-column: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "Title"
+    "Info"
+    "Blank"
+    "Price"
+    "MoreBlank"
+    "Availablility";
+}
+
 .productDescriptionTitle {
   font-size: 22px;
   font-weight: bold;
   padding: 5px;
   color: black;
-  /* font-family: BogleBlack; */
+  font-family: BogleBold;
+
 }
 
 .productDescriptionMetrics {
   display: flex;
   font-size: 12px;
-  /* justify-content: space-between; */
-  /* justify-content: space-around; */
-  /* justify-content: space-evenly; */
+
 }
 
-.stars{
+.stars {
   font-weight: 200;
 }
 
 
-.rating{
+.rating {
   color: gray;
 }
 
-.ratingAmount{
+.ratingAmount {
   text-decoration: underline;
 }
 
-.commentsAmount{
+.commentsAmount {
   text-decoration: underline;
 }
 
-.storeSerial{
+.storeSerial {
   color: gray;
 
+}
+
+.price {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: BogleBold;
+
+}
+
+.availability {
+  font-size: 14px;
+  color: red;
+  font-weight: bold;
+  font-family: BogleBold;
 }
