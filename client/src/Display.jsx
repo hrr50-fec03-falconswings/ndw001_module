@@ -2,6 +2,7 @@ import React from 'react';
 import ProductInfo from '../src/ProductInfo.jsx';
 
 
+
 class Display extends React.Component{
   constructor(){
     super();

@@ -19,24 +19,29 @@ body {
 }
 
 .productDescriptionTitle {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   padding: 5px;
-
+  color: black;
+  /* font-family: BogleBlack; */
 }
 
 .productDescriptionMetrics {
   display: flex;
-  font-size: 14px;
-
+  font-size: 12px;
+  /* justify-content: space-between; */
+  /* justify-content: space-around; */
+  /* justify-content: space-evenly; */
 }
 
-/* .stars{
-
+.stars{
+  font-weight: 200;
 }
+
 
 .rating{
-} */
+  color: gray;
+}
 
 .ratingAmount{
   text-decoration: underline;
@@ -47,6 +52,6 @@ body {
 }
 
 .storeSerial{
-
+  color: gray;
 
 }
