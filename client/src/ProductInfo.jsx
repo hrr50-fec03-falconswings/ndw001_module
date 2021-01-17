@@ -6,23 +6,47 @@ class ProductInfo extends React.Component{
   constructor(props){
     super(props);
 
+    // currentId is called productId in db
     this.state = {
-      currentProduct: 1,
-      amount: 2
+      currentId: 1,
+      name: '',
+      rating: 0.0,
+      ratings_amt: 0,
+      comments_amt: 0,
+      price: 0.00,
+      amt_left: 0,
+      images: ''
     }
 
   }
-  // componentDidMount(){
-
-  // }
-
-  //pass props into Ratings
+  componentDidMount(){
+    let randItem = Math.floor(Math.random() * Math.floor(100));
+    console.log(randItem);
+    axios.get(`/api/${randItem}/`)
+      .then( (res) => {
+        let product = res.data[0]
+        this.setState({
+          currentId: product.currentId,
+          name: product.name,
+          rating: product.rating,
+          ratings_amt: product.ratings_amt,
+          comments_amt: product.comments_amt,
+          price: product.price,
+          amt_left: product.amt_left,
+          images: product.images
+        })
+        console.log(res.data[0]);
+      })
+      .catch( (err) => {
+        console.log(err);
+      })
+  }
 
   render(){
     return (
       <div class="productInfo">
         <div class='productDescriptionTitle'>
-          ProductName
+          {`${this.state.name}`}
         </div>
         <div class='productDescriptionMetrics'>
           <div class='stars'>
