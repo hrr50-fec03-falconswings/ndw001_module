@@ -7,8 +7,7 @@ class Ratings extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      // rating: this.props.rating
-      rating: 4.5
+      rating: this.props.rating
     }
 
   }
@@ -24,7 +23,7 @@ class Ratings extends React.Component{
           <FontAwesomeIcon id='star5'icon={reg.faStar}/>
         </div>
       )
-    }else if (this.state.rating >= 0.4 && this.state.rating < 0.7) {
+    } else if (this.state.rating >= 0.4 && this.state.rating < 0.7) {
       return (
         <div>
           <FontAwesomeIcon id='star1'icon={solid.faStarHalf}/>

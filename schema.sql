@@ -2,6 +2,7 @@ DROP DATABASE IF EXISTS notWalmart;
 CREATE DATABASE notWalmart;
 USE notWalmart;
 
+-- productId is called currentId in ProductInfo.jsx
 CREATE TABLE Products (
   productId int not null AUTO_INCREMENT,
   name VARCHAR(250),

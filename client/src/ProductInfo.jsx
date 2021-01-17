@@ -26,7 +26,7 @@ class ProductInfo extends React.Component{
       .then( (res) => {
         let product = res.data[0]
         this.setState({
-          currentId: product.currentId,
+          currentId: product.productId,
           name: product.name,
           rating: product.rating,
           ratings_amt: product.ratings_amt,
@@ -50,22 +50,22 @@ class ProductInfo extends React.Component{
         </div>
         <div class='productDescriptionMetrics'>
           <div class='stars'>
-            <Ratings />
+            <Ratings rating={this.state.rating} />
           </div>
           &nbsp; &nbsp;
-          <div class='rating'>(0.0)</div>
+          <div class='rating'>{`(${this.state.rating})`}</div>
           &nbsp; &nbsp;
-          <div class='ratingAmount'> #Ratings </div>
+          <div class='ratingAmount'> {`${this.state.ratings_amt} ratings`} </div>
           &nbsp;&nbsp;
-          <div class='commentsAmount'>  #Comments </div>
+          <div class='commentsAmount'> {`${this.state.comments_amt} comments`} </div>
           &nbsp;&nbsp;
-          <div class='storeSerial'> notWalmart#id </div>
+          <div class='storeSerial'> {`notWalmart#${this.state.currentId}`}</div>
         </div>
         <div class='price'>
-          Price
+          {`$${this.state.price}`}
         </div>
         <div class='availability'>
-          {`Only ${this.state.amount} left!`}
+          {`Only ${this.state.amt_left} left!`}
         </div>
       </div>
     )
