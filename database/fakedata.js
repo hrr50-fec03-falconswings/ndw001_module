@@ -16,8 +16,7 @@ Pictures
 // Creates fake data
 for (let i = 1; i <= 100; i++) {
   let name = faker.commerce.productName();
-  let itemPrice = faker.commerce.price();
-  let price = Number.parseFloat(itemPrice).toFixed(2);
+  let price = faker.commerce.price();
   let rating = (Math.floor(Math.random() * Math.floor(5)) + Math.random()).toFixed(1);
   let randRatings =  Math.floor(Math.random() * Math.floor(150));
   let randComments = Math.floor(Math.random() * Math.floor(200));
