@@ -23,7 +23,7 @@ for (let i = 1; i <= 100; i++) {
   let randComments = Math.floor(Math.random() * Math.floor(200));
   let randRemain = Math.floor(Math.random() * Math.floor(5)) + 1;
   let picArr = [];
-  let picturesNum = Math.floor(Math.random() * Math.floor(5)) + 5;
+  let picturesNum = Math.floor(Math.random() * Math.floor(3)) + 5;
   // creates random pictures to add into images
   for(let k = 0; k < picturesNum; k++){
     let picture = faker.image.image();
