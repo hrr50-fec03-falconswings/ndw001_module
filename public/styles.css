@@ -8,14 +8,20 @@
   src: url('Assets/bogle_font/OTF/Bogle-Bold.otf');
 }
 
+#app {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 99%;
+}
+
 body {
   font-family: BogleRegular;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 65% 35%;
 }
 
 .grid-item {
@@ -89,26 +95,35 @@ body {
   font-family: BogleBold;
 }
 
-
-
-
 .picGrid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(6, 1fr);
   grid-template-areas:
-    "image1 main main main"
-    "image2 main main main"
-    "image3 main main main"
-    "image4 main main main"
-    "image5 main main main"
-    "arrow main main main"
+    "images main main main"
+    "images main main main"
+    "images main main main"
+    "images main main main"
+    "images main main main"
+    "images main main main"
 }
 
 .main {
   grid-area: main;
 }
 
-.images {
+#images {
   grid-area: images;
+  flex-direction: column;
+}
+
+.images {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+
+.main {
+  max-width: 130%;
+  max-height: 130%;
 }

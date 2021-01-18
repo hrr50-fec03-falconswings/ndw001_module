@@ -13,17 +13,18 @@ class PhotoCarousel extends React.Component {
     return (
       <div class='picGrid'>
         <img className='main' src={this.props.images[0]} />
-        <div className='image1'>IMG1</div>
-        <div className='image2'>IMG2</div>
-        <div className='image3'>IMG3</div>
-        <div className='image4'>IMG4</div>
-        <div className='image5'>IMG5</div>
+        <div id='images'>
+          <img className='images' src={this.props.images[1]}/>
+          <img className='images' src={this.props.images[2]}/>
+          <img className='images' src={this.props.images[3]}/>
+          <img className='images' src={this.props.images[4]}/>
+
+        </div>
+
       </div>
     )
   }
 }
-
-
 
 // Main Component, Images Componenet
 
