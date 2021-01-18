@@ -14,8 +14,8 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 .grid-item {
@@ -87,4 +87,28 @@ body {
   color: red;
   font-weight: bold;
   font-family: BogleBold;
+}
+
+
+
+
+.picGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "image1 main main main"
+    "image2 main main main"
+    "image3 main main main"
+    "image4 main main main"
+    "image5 main main main"
+    "arrow main main main"
+}
+
+.main {
+  grid-area: main;
+}
+
+.images {
+  grid-area: images;
 }
