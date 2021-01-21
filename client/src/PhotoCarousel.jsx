@@ -2,6 +2,25 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faChevronDown} from '@fortawesome/free-solid-svg-icons'
 import {faChevronUp} from '@fortawesome/free-solid-svg-icons'
+import styled, {css} from 'styled-components'
+
+
+
+let MainPicture = styled.img`
+  grid-area: main;
+`;
+
+let ImagesCarousel = styled.div`
+  grid-area: images;
+  flex-direction: column;
+  overflow: hidden;
+`;
+
+let Image = styled.img`
+  max-width: 90%;
+  max-height: 80%;
+`;
+
 
 class PhotoCarousel extends React.Component {
   constructor(props) {
@@ -58,7 +77,45 @@ class PhotoCarousel extends React.Component {
   }
 
   render() {
+    if(this.props.images.length){
+      return (
+        <div class='picGrid'>
+          <MainPicture src={this.props.images[this.state.mainDisplay]}></MainPicture>
+          <ImagesCarousel>
+            {this.props.images.map( (image, i) => (
+              <Image key={i} id={i} onMouseEnter={this.hoverPicture} onMouseLeave={this.unhoverPicture} onClick={this.changeMain} src={image}></Image>
+            ))}
+          </ImagesCarousel>
+        </div>
+      )
+    } else {
+      return <div>Loading</div>;
+    }
+  }
+}
 
+// Main Component, Images Componenet
+
+export default PhotoCarousel;
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+where the render is
     if(this.state.currentPicture === 0){
       return (
         <div class='picGrid'>
@@ -86,9 +143,5 @@ class PhotoCarousel extends React.Component {
         </div>
       )
     }
-    }
-}
 
-// Main Component, Images Componenet
-
-export default PhotoCarousel;
+*/

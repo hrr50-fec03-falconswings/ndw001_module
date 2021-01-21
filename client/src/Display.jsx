@@ -33,8 +33,6 @@ class Display extends React.Component{
           amt_left: product.amt_left,
           images: JSON.parse(product.images)
         })
-        // use to fix price
-        // console.log(res.data[0]);
       })
       .catch( (err) => {
         console.log(err);

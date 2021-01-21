@@ -111,30 +111,25 @@ body {
     "images main main main main"
 }
 
-.main {
+/* .main {
   grid-area: main;
-}
+} */
 
 .arrow {
   display: block;
   margin: 0 auto;
 }
-
+/*
 .leftImages {
   grid-area: images;
   flex-direction: column;
-  /* overflow: scroll;
-  -webkit-overflow-scrolling: touch; */
-  /* overflow-y:auto; */
-  /* scroll-snap-type: y mandatory;
-  scroll-snap-align: start; */
   overflow: hidden;
-}
+} */
 
-.images {
+/* .images {
   max-width: 90%;
   max-height: 80%;
-}
+} */
 
 .main {
   max-width: 100%;
