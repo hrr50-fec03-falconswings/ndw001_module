@@ -7,17 +7,23 @@ module.exports = {
   entry: path.join(SRC_DIR, 'index.js'),
   output: {
     path: OUT_DIR,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
         test:/\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: {loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }
       }
+
     ]
   },
+
   mode: 'development',
   resolve: {
     extensions: ['.js', '.jsx']

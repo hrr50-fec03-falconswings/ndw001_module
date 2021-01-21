@@ -1,0 +1,142 @@
+
+@font-face {
+  font-family: BogleRegular;
+  src: url('Assets/bogle_font/OTF/Bogle-Regular.otf');
+}
+@font-face {
+  font-family: BogleBold;
+  src: url('Assets/bogle_font/OTF/Bogle-Bold.otf');
+}
+
+#app {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 99%;
+}
+
+body {
+  font-family: BogleRegular;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 65% 35%;
+}
+
+.grid-item {
+  font-size: 50px;
+  font-family: BogleRegular;
+}
+
+.productInfo {
+  display: grid;
+  grid-column: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "Title"
+    "Info"
+    "Blank"
+    "Price"
+    "MoreBlank"
+    "Availablility";
+}
+
+.productDescriptionTitle {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 5px;
+  color: black;
+  font-family: BogleBold;
+
+}
+
+.productDescriptionMetrics {
+  display: flex;
+  font-size: 12px;
+
+}
+
+.stars {
+  font-weight: 200;
+}
+
+.empty {
+  color:rgb(253, 247, 247);
+}
+
+.rating {
+  color: gray;
+}
+
+.ratingAmount {
+  text-decoration: underline;
+}
+
+.commentsAmount {
+  text-decoration: underline;
+}
+
+.storeSerial {
+  color: gray;
+
+}
+
+.price {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: BogleBold;
+
+}
+
+.availability {
+  font-size: 14px;
+  color: red;
+  font-weight: bold;
+  font-family: BogleBold;
+}
+
+.picGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "images main main main main"
+    "images main main main main"
+    "images main main main main"
+    "images main main main main"
+    "images main main main main"
+    "images main main main main"
+}
+
+.main {
+  grid-area: main;
+}
+
+.arrow {
+  display: block;
+  margin: 0 auto;
+}
+
+.leftImages {
+  grid-area: images;
+  flex-direction: column;
+  /* overflow: scroll;
+  -webkit-overflow-scrolling: touch; */
+  /* overflow-y:auto; */
+  /* scroll-snap-type: y mandatory;
+  scroll-snap-align: start; */
+  overflow: hidden;
+}
+
+.images {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.main {
+  max-width: 100%;
+  max-height: 130%;
+}

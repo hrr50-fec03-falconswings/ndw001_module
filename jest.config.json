@@ -1,0 +1,3 @@
+{
+  "setupFilesAfterEnv": ["./client/src/tests/Display.test.js"]
+}

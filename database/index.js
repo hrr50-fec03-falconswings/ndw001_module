@@ -17,6 +17,7 @@ connection.connect( (err) => {
 })
 
 connection.readOne = ( productId, callback ) => {
+  // finds product using ID and sends back to client
   connection.query(`select * from Products where productId=${productId}`, (err, productData) => {
     if(err){
       callback(err, null);
@@ -25,6 +26,5 @@ connection.readOne = ( productId, callback ) => {
     }
   })
 }
-
 
 module.exports = connection;
