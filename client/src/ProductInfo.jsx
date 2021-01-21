@@ -32,6 +32,7 @@ class ProductInfo extends React.Component{
         <div class='availability'>
           {`Only ${this.props.amt_left} left!`}
         </div>
+        <div class='addOns'> </div>
       </div>
     )
 

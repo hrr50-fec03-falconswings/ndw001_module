@@ -61,6 +61,9 @@ body {
   font-weight: 200;
 }
 
+.empty {
+  color:rgb(253, 247, 247);
+}
 
 .rating {
   color: gray;
@@ -100,30 +103,40 @@ body {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(6, 1fr);
   grid-template-areas:
-    "images main main main"
-    "images main main main"
-    "images main main main"
-    "images main main main"
-    "images main main main"
-    "images main main main"
+    "images main main main main"
+    "images main main main main"
+    "images main main main main"
+    "images main main main main"
+    "images main main main main"
+    "images main main main main"
 }
 
 .main {
   grid-area: main;
 }
 
-#images {
+.arrow {
+  display: block;
+  margin: 0 auto;
+}
+
+.leftImages {
   grid-area: images;
   flex-direction: column;
+  /* overflow: scroll;
+  -webkit-overflow-scrolling: touch; */
+  /* overflow-y:auto; */
+  /* scroll-snap-type: y mandatory;
+  scroll-snap-align: start; */
+  overflow: hidden;
 }
 
 .images {
   max-width: 90%;
-  max-height: 90%;
+  max-height: 80%;
 }
 
-
 .main {
-  max-width: 130%;
+  max-width: 100%;
   max-height: 130%;
 }

@@ -24,12 +24,21 @@ class Ratings extends React.Component{
       return (
         <div>
           <FontAwesomeIcon id='star1'icon={solid.faStarHalf}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
         </div>
       )
     } else if ( this.props.rating >= 0.8 && this.props.rating < 1.4 ) {
       return (
         <div>
           <FontAwesomeIcon id='star1'icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+
         </div>
       )
     } else if ( this.props.rating >= 1.4 && this.props.rating < 1.7 ) {
@@ -37,6 +46,9 @@ class Ratings extends React.Component{
         <div>
           <FontAwesomeIcon id='star1'icon={solid.faStar}/>
           <FontAwesomeIcon id='star2'icon={solid.faStarHalf}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
         </div>
       )
     } else if ( this.props.rating >= 1.8 && this.props.rating < 2.4 ) {
@@ -44,6 +56,10 @@ class Ratings extends React.Component{
         <div>
           <FontAwesomeIcon id='star1'icon={solid.faStar}/>
           <FontAwesomeIcon id='star2'icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+
         </div>
       )
     } else if ( this.props.rating >= 2.4 && this.props.rating < 2.7 ) {
@@ -52,6 +68,8 @@ class Ratings extends React.Component{
           <FontAwesomeIcon id='star1'icon={solid.faStar}/>
           <FontAwesomeIcon id='star2'icon={solid.faStar}/>
           <FontAwesomeIcon id='star3'icon={solid.faStarHalf}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
         </div>
       )
     } else if ( this.props.rating >= 2.8 && this.props.rating < 3.4 ) {
@@ -60,6 +78,8 @@ class Ratings extends React.Component{
           <FontAwesomeIcon id='star1'icon={solid.faStar}/>
           <FontAwesomeIcon id='star2'icon={solid.faStar}/>
           <FontAwesomeIcon id='star3'icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
         </div>
       )
     } else if ( this.props.rating >= 3.4 && this.props.rating < 3.7 ) {
@@ -69,6 +89,7 @@ class Ratings extends React.Component{
           <FontAwesomeIcon id='star2'icon={solid.faStar}/>
           <FontAwesomeIcon id='star3'icon={solid.faStar}/>
           <FontAwesomeIcon id='star4'icon={solid.faStarHalf}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
         </div>
       )
     } else if ( this.props.rating >= 3.8 && this.props.rating < 4.4 ) {
@@ -78,6 +99,7 @@ class Ratings extends React.Component{
           <FontAwesomeIcon id='star2'icon={solid.faStar}/>
           <FontAwesomeIcon id='star3'icon={solid.faStar}/>
           <FontAwesomeIcon id='star4'icon={solid.faStar}/>
+          <FontAwesomeIcon className='empty' icon={solid.faStar}/>
         </div>
       )
     } else if ( this.props.rating >= 4.4 && this.props.rating < 4.7 ) {
