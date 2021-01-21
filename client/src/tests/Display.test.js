@@ -19,7 +19,6 @@ describe('Display Test', () => {
   });
 });
 
-
 /*
 Psuedocode for Tests
 
@@ -47,7 +46,5 @@ It should be able to zoom in on a picture
 It should be able to change the images when clicking on the arrow.
   -When an arrow is clicked, the images change.
   -When the other arrow is clicked, the original images return.
-
-
 
 */
