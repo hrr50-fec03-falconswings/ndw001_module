@@ -6,7 +6,6 @@ class ProductInfo extends React.Component{
     super(props);
   }
 
-
   render(){
     return (
       <div class="productInfo">

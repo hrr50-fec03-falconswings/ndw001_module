@@ -100,15 +100,18 @@ body {
 
 .picGrid {
   display: grid;
+  height: 610px;
+  width: 600px;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-areas:
+
+  /* grid-template-rows: repeat(5, 1fr); */
+  /* grid-template-areas:
     "images main main main main"
     "images main main main main"
     "images main main main main"
     "images main main main main"
     "images main main main main"
-    "images main main main main"
+  */
 }
 
 /* .main {
@@ -120,18 +123,15 @@ body {
   margin: 0 auto;
 }
 /*
-.leftImages {
-  grid-area: images;
-  flex-direction: column;
-  overflow: hidden;
+.buttonContainer {
+  grid-row: 1;
+  grid-column: 1;
 } */
 
-/* .images {
-  max-width: 90%;
-  max-height: 80%;
-} */
+#topArrow {
+  display: none;
+}
 
-.main {
-  max-width: 100%;
-  max-height: 130%;
+#bottomArrow {
+  display: block;
 }

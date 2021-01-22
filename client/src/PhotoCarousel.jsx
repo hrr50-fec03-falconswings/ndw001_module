@@ -4,33 +4,41 @@ import {faChevronDown} from '@fortawesome/free-solid-svg-icons'
 import {faChevronUp} from '@fortawesome/free-solid-svg-icons'
 import styled, {css} from 'styled-components'
 
-
-
 let MainPicture = styled.img`
-  grid-area: main;
+  grid-row: 1;
+  grid-column: 2 / 6;
+  object-fit:cover;
+  max-width: 500px;
+  max-height: 500px;
 `;
 
 let ImagesCarousel = styled.div`
-  grid-area: images;
+  grid-row: 1;
+  grid-column: 1 / 2;
+  height: 380px;
+  width: 100px;
+  display: flex;
+  overflow-y: auto;
   flex-direction: column;
   overflow: hidden;
+  scroll-behavior: smooth;
 `;
 
 let Image = styled.img`
-  max-width: 90%;
-  max-height: 80%;
+  padding-bottom: 6px;
+  width: 100%;
+  height: 25%;
+  flex-shrink: 0;
 `;
-
 
 class PhotoCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPicture: 0,
+      renderTopArrow: false,
       mainDisplay: 0,
       previousMain: 0,
       click: false
-
     }
     this.carouselArrow = this.carouselArrow.bind(this);
     this.changeMain = this.changeMain.bind(this);
@@ -39,6 +47,7 @@ class PhotoCarousel extends React.Component {
   }
 
   changeMain(e) {
+    // console.log('clicking');
     this.setState({
       mainDisplay: e.target.id,
       click: true
@@ -46,18 +55,29 @@ class PhotoCarousel extends React.Component {
   }
 
   carouselArrow(){
-    if(this.state.currentPicture === 0){
+    if(this.state.renderTopArrow){
       this.setState({
-        currentPicture: 4
+        renderTopArrow: false
       })
+      console.log('top arrow func');
+      let arrow = document.getElementById('topArrow');
+      arrow.style.display = 'none';
+      let show = document.getElementById('bottomArrow');
+      show.style.display = 'block';
     } else {
       this.setState({
-        currentPicture: 0
+        renderTopArrow: true
       })
+      console.log('bottom arrow func');
+      let arrow = document.getElementById('bottomArrow');
+      arrow.style.display = 'none';
+      let show = document.getElementById('topArrow');
+      show.style.display = 'block';
     }
   }
 
   hoverPicture(e){
+    // console.log('hovering');
     this.setState({
       previousMain: this.state.mainDisplay,
       mainDisplay: e.target.id
@@ -65,6 +85,7 @@ class PhotoCarousel extends React.Component {
   }
 
   unhoverPicture(e){
+    // console.log('unhovering');
     if(this.state.click){
       this.setState({
         click: false
@@ -81,11 +102,17 @@ class PhotoCarousel extends React.Component {
       return (
         <div class='picGrid'>
           <MainPicture src={this.props.images[this.state.mainDisplay]}></MainPicture>
+          <a className='buttonContainer' id='topArrow' href='#0'>
+            <FontAwesomeIcon className='arrow' onClick={this.carouselArrow} icon={faChevronUp} />
+          </a>
           <ImagesCarousel>
             {this.props.images.map( (image, i) => (
               <Image key={i} id={i} onMouseEnter={this.hoverPicture} onMouseLeave={this.unhoverPicture} onClick={this.changeMain} src={image}></Image>
             ))}
           </ImagesCarousel>
+          <a className='buttonContainer' id='bottomArrow' href='#4'>
+            <FontAwesomeIcon className='arrow' onClick={this.carouselArrow} icon={faChevronDown} />
+          </a>
         </div>
       )
     } else {
@@ -98,20 +125,20 @@ class PhotoCarousel extends React.Component {
 
 export default PhotoCarousel;
 
-
-
-
-
-
-
-
-
-
 /*
 
 
-
-
+carouselArrow(){
+    if(this.state.currentPicture === 0){
+      this.setState({
+        currentPicture: 4
+      })
+    } else {
+      this.setState({
+        currentPicture: 0
+      })
+    }
+  }
 
 
 
