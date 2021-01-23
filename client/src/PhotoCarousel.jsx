@@ -13,7 +13,7 @@ let MainPicture = styled.img`
 `;
 
 let ImagesCarousel = styled.div`
-  height: 380px;
+  height: 365px;
   width: 100px;
   display: flex;
   overflow-y: auto;
@@ -27,9 +27,12 @@ let Image = styled.img`
   padding-bottom: 6px;
   width: 40px;
   height: 40px;
+  margin-bottom: 25px;
+  border-bottom: rgba(0,0,0,0) solid 4px;
   &:hover {
-    border-bottom: red solid 3px;
+    border-bottom: #cb2c90 solid 4px;
   }
+
 `;
 
 let ZoomPicture = styled.img`
