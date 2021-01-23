@@ -10,6 +10,7 @@ let MainPicture = styled.img`
   object-fit:cover;
   width: 420px;
   height: 420px;
+  margin-right: 16px;
 `;
 
 let ImagesCarousel = styled.div`
