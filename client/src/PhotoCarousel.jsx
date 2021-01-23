@@ -8,13 +8,11 @@ let MainPicture = styled.img`
   grid-row: 1;
   grid-column: 2 / 6;
   object-fit:cover;
-  max-width: 500px;
-  max-height: 500px;
+  width: 420px;
+  height: 420px;
 `;
 
 let ImagesCarousel = styled.div`
-  grid-row: 1;
-  grid-column: 1 / 2;
   height: 380px;
   width: 100px;
   display: flex;
@@ -22,14 +20,32 @@ let ImagesCarousel = styled.div`
   flex-direction: column;
   overflow: hidden;
   scroll-behavior: smooth;
+  // background-color: red;
 `;
 
 let Image = styled.img`
   padding-bottom: 6px;
-  width: 100%;
-  height: 25%;
-  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  &:hover {
+    border-bottom: red solid 3px;
+  }
 `;
+
+let ZoomPicture = styled.img`
+  position: absolute;
+  right: 0px;
+  width: 200px;
+  grid-column: 5;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+
+`
+let CarouselContainer = styled.div`
+  width: 40px;
+  padding-left: 20px;
+`
 
 class PhotoCarousel extends React.Component {
   constructor(props) {
@@ -54,12 +70,11 @@ class PhotoCarousel extends React.Component {
     })
   }
 
-  carouselArrow(){
+  carouselArrow(e){
     if(this.state.renderTopArrow){
       this.setState({
         renderTopArrow: false
       })
-      console.log('top arrow func');
       let arrow = document.getElementById('topArrow');
       arrow.style.display = 'none';
       let show = document.getElementById('bottomArrow');
@@ -68,7 +83,6 @@ class PhotoCarousel extends React.Component {
       this.setState({
         renderTopArrow: true
       })
-      console.log('bottom arrow func');
       let arrow = document.getElementById('bottomArrow');
       arrow.style.display = 'none';
       let show = document.getElementById('topArrow');
@@ -82,6 +96,7 @@ class PhotoCarousel extends React.Component {
       previousMain: this.state.mainDisplay,
       mainDisplay: e.target.id
     })
+    // document.getElementById('')
   }
 
   unhoverPicture(e){
@@ -100,19 +115,22 @@ class PhotoCarousel extends React.Component {
   render() {
     if(this.props.images.length){
       return (
-        <div class='picGrid'>
-          <MainPicture src={this.props.images[this.state.mainDisplay]}></MainPicture>
-          <a className='buttonContainer' id='topArrow' href='#0'>
-            <FontAwesomeIcon className='arrow' onClick={this.carouselArrow} icon={faChevronUp} />
-          </a>
-          <ImagesCarousel>
-            {this.props.images.map( (image, i) => (
-              <Image key={i} id={i} onMouseEnter={this.hoverPicture} onMouseLeave={this.unhoverPicture} onClick={this.changeMain} src={image}></Image>
-            ))}
-          </ImagesCarousel>
-          <a className='buttonContainer' id='bottomArrow' href='#4'>
-            <FontAwesomeIcon className='arrow' onClick={this.carouselArrow} icon={faChevronDown} />
-          </a>
+        <div class='mainContainer'>
+          <CarouselContainer>
+            <a className='buttonContainer' id='topArrow' href='#0'>
+                <FontAwesomeIcon className='arrow' onClick={this.carouselArrow} icon={faChevronUp} />
+            </a>
+            <ImagesCarousel>
+              {this.props.images.map( (image, i) => (
+                <Image key={i} id={i} onMouseEnter={this.hoverPicture} onMouseLeave={this.unhoverPicture} onClick={this.changeMain} src={image}></Image>
+              ))}
+            </ImagesCarousel>
+            <a className='buttonContainer' id='bottomArrow' href='#4'>
+                <FontAwesomeIcon className='arrow' onClick={this.carouselArrow} icon={faChevronDown} />
+            </a>
+          </CarouselContainer>
+            <MainPicture src={this.props.images[this.state.mainDisplay]}></MainPicture>
+            {/* <ZoomPicture src={this.props.images[this.state.mainDisplay]}></ZoomPicture> */}
         </div>
       )
     } else {

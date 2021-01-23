@@ -98,20 +98,11 @@ body {
   font-family: BogleBold;
 }
 
-.picGrid {
-  display: grid;
-  height: 610px;
-  width: 600px;
-  grid-template-columns: repeat(5, 1fr);
-
-  /* grid-template-rows: repeat(5, 1fr); */
-  /* grid-template-areas:
-    "images main main main main"
-    "images main main main main"
-    "images main main main main"
-    "images main main main main"
-    "images main main main main"
-  */
+.mainContainer {
+  display: flex;
+  height: 467px;
+  width: 540px;
+  justify-content: space-between ;
 }
 
 /* .main {
