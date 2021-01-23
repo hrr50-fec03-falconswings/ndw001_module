@@ -33,7 +33,6 @@ let Image = styled.img`
   &:hover {
     border-bottom: #cb2c90 solid 4px;
   }
-
 `;
 
 let ZoomPicture = styled.img`
@@ -44,7 +43,6 @@ let ZoomPicture = styled.img`
   position: absolute;
   width: 50%;
   height: 50%;
-
 `
 let CarouselContainer = styled.div`
   width: 40px;
@@ -67,7 +65,6 @@ class PhotoCarousel extends React.Component {
   }
 
   changeMain(e) {
-    // console.log('clicking');
     this.setState({
       mainDisplay: e.target.id,
       click: true
@@ -95,16 +92,13 @@ class PhotoCarousel extends React.Component {
   }
 
   hoverPicture(e){
-    // console.log('hovering');
     this.setState({
       previousMain: this.state.mainDisplay,
       mainDisplay: e.target.id
     })
-    // document.getElementById('')
   }
 
   unhoverPicture(e){
-    // console.log('unhovering');
     if(this.state.click){
       this.setState({
         click: false
@@ -143,54 +137,4 @@ class PhotoCarousel extends React.Component {
   }
 }
 
-// Main Component, Images Componenet
-
 export default PhotoCarousel;
-
-/*
-
-
-carouselArrow(){
-    if(this.state.currentPicture === 0){
-      this.setState({
-        currentPicture: 4
-      })
-    } else {
-      this.setState({
-        currentPicture: 0
-      })
-    }
-  }
-
-
-
-where the render is
-    if(this.state.currentPicture === 0){
-      return (
-        <div class='picGrid'>
-          <img className='main' src={this.props.images[this.state.mainDisplay]} />
-          <div className='leftImages'>
-            <img className='images' onMouseEnter={this.hoverPicture} onMouseLeave={this.unhoverPicture} onClick={this.changeMain} id={this.state.currentPicture} src={this.props.images[this.state.currentPicture]}/>
-            <img className='images' onMouseEnter={this.hoverPicture} onMouseLeave={this.unhoverPicture} onClick={this.changeMain} id={this.state.currentPicture +1}  src={this.props.images[this.state.currentPicture + 1]}/>
-            <img className='images'  onClick={this.changeMain} onMouseEnter={this.hoverPicture} onMouseLeave={this.unhoverPicture} id={this.state.currentPicture +2}  src={this.props.images[this.state.currentPicture + 2]}/>
-            <img className='images'  onClick={this.changeMain} onMouseLeave={this.unhoverPicture} onMouseEnter={this.hoverPicture} id={this.state.currentPicture +3}  src={this.props.images[this.state.currentPicture + 3]}/>
-            <FontAwesomeIcon className='arrow' onClick={this.carouselArrow} icon={faChevronDown}/>
-          </div>
-        </div>
-      )
-    } else {
-      return (
-        <div class='picGrid'>
-          <img className='main' src={this.props.images[this.state.mainDisplay]} />
-          <div id='images'>
-          <FontAwesomeIcon className='arrow' onClick={this.carouselArrow} icon={faChevronUp} />
-          <img className='images' onMouseEnter={this.hoverPicture} onMouseLeave={this.unhoverPicture} onClick={this.changeMain} id={this.state.currentPicture} src={this.props.images[this.state.currentPicture]}/>
-            <img className='images' onMouseEnter={this.hoverPicture} onMouseLeave={this.unhoverPicture} onClick={this.changeMain} id={this.state.currentPicture +1}  src={this.props.images[this.state.currentPicture + 1]}/>
-            <img className='images'  onClick={this.changeMain} onMouseEnter={this.hoverPicture} onMouseLeave={this.unhoverPicture} id={this.state.currentPicture +2}  src={this.props.images[this.state.currentPicture + 2]}/>
-            <img className='images'  onClick={this.changeMain} onMouseLeave={this.unhoverPicture} onMouseEnter={this.hoverPicture} id={this.state.currentPicture +3}  src={this.props.images[this.state.currentPicture + 3]}/>
-          </div>
-        </div>
-      )
-    }
-
-*/

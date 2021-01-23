@@ -21,17 +21,12 @@ body {
 
 .grid-container {
   display: flex;
-
 }
 
 .grid-item {
   font-size: 50px;
   font-family: BogleRegular;
 }
-/*
-.productInfo {
-
-} */
 
 .productDescriptionTitle {
   font-size: 22px;
@@ -39,7 +34,6 @@ body {
   color: black;
   font-family: BogleBold;
   margin-bottom:5px;
-
 }
 
 .productDescriptionMetrics {
@@ -92,16 +86,26 @@ body {
   color: red;
   font-weight: bold;
   font-family: BogleBold;
+  margin-bottom:2.5em;
 }
 
 .addOns {
-  border: solid 1px gray;
+  border: solid 1px rgb(218, 218, 218);
   font-size: 12px;
+  padding: 1em;
+}
+
+.addOns div {
+  margin-bottom: 1em;
 }
 
 .addOnHeader {
   font-size: 14px;
   font-family: BogleBold;
+}
+
+.secondLine {
+  font-size: 11px;
 }
 
 .mainContainer {
@@ -111,21 +115,12 @@ body {
   justify-content: space-between ;
 }
 
-/* .main {
-  grid-area: main;
-} */
-
 .arrow {
   display: block;
   margin: 0 auto;
   font-size: 12px;
   color: gray;
 }
-/*
-.buttonContainer {
-  grid-row: 1;
-  grid-column: 1;
-} */
 
 #topArrow {
   display: none;
@@ -136,9 +131,3 @@ body {
   display: block;
 }
 
-/* .circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 40px;
-  background-color: gray;
-} */

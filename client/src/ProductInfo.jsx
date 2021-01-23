@@ -34,9 +34,11 @@ class ProductInfo extends React.Component{
           {`Only ${this.props.amt_left} left!`}
         </div>
         <div class='addOns'>
-          <span class='addOnHeader'>Add-on Services </span>
-          <span> (0 Selected) Show Less</span>
-          <div>Add Walmart protection plan powered by Allstate</div>
+          <div class='topLine'>
+            <span class='addOnHeader'>Add-on Services </span>
+            <span> (0 Selected) <u>Show Less</u></span>
+          </div>
+          <div class='secondLine'>Add <u>Walmart protection plan</u> powered by Allstate</div>
           <div><input type="radio"></input> None
           <input type="radio"></input> 3 Years - $38.00
           <input type="radio"></input> 4 Years - $45.00
