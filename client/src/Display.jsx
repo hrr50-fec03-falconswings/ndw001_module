@@ -41,11 +41,11 @@ class Display extends React.Component{
 
   render(){
     return(
-      <div class='grid-container'>
-        <div class='grid-item'>
+      <div className='grid-container'>
+        <div className='grid-item'>
           <PhotoCarousel images={this.state.images}/>
         </div>
-        <div class='grid-item'>
+        <div className='grid-item'>
           <ProductInfo currentId={this.state.currentId} name={this.state.name} rating={this.state.rating} ratings_amt={this.state.ratings_amt} comments_amt={this.state.comments_amt} price={this.state.price} amt_left={this.state.amt_left}/>
         </div>
       </div>

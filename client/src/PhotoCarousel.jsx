@@ -37,12 +37,9 @@ let Image = styled.img`
 
 let ZoomPicture = styled.img`
   position: absolute;
-  right: 0px;
-  width: 200px;
-  grid-column: 5;
-  position: absolute;
-  width: 50%;
-  height: 50%;
+  margin-left: 530px;
+  width: 420px;
+  height: 520px;
 `
 let CarouselContainer = styled.div`
   width: 40px;
@@ -56,12 +53,15 @@ class PhotoCarousel extends React.Component {
       renderTopArrow: false,
       mainDisplay: 0,
       previousMain: 0,
-      click: false
+      click: false,
+      zoom: false
     }
     this.carouselArrow = this.carouselArrow.bind(this);
     this.changeMain = this.changeMain.bind(this);
     this.hoverPicture = this.hoverPicture.bind(this);
     this.unhoverPicture = this.unhoverPicture.bind(this);
+    this.zoom = this.zoom.bind(this);
+    this.unzoom = this.unzoom.bind(this);
   }
 
   changeMain(e) {
@@ -110,10 +110,84 @@ class PhotoCarousel extends React.Component {
     }
   }
 
+  zoom(e){
+    this.setState({
+      zoom: true
+    })
+    let img = document.getElementById('mainPic');
+    let result = document.getElementById('zoomPic');
+    result.style.display = 'block';
+    let lens = document.createElement('DIV');
+    lens.setAttribute('class', 'zoom-lens');
+
+
+    img.parentElement.insertBefore(lens, img);
+    let cx = result.offsetWidth / lens.offsetWidth;
+    let cy = result.offsetHeight / lens.offsetHeight;
+    result.style.backgroundImage = "url('" + img.src + "')";
+    result.style.backgroundSize = (img.width * cx) + 'px ' + (img.height * cy) + 'px';
+
+    let moveLens = (e) => {
+      e.preventDefault();
+      let pos = getCursorPos(e);
+      let x = pos.x - (lens.offsetWidth);
+      let y = pos.y - (lens.offsetWidth);
+      if(x > img.width - lens.offsetWidth){
+        x = img.width - lens.offsetWidth;
+      }
+      if(x < 0){
+        x = 0;
+      }
+      if(y > img.height - lens.offsetHeight){
+        y = img.height - lens.offsetHeight;
+      }
+      if(y < 0){
+        y = 0;
+      }
+      lens.style.left = (x+120) + 'px';
+      lens.style.top = y + 'px';
+      result.style.backgroundPosition = '-' + (x * cx) + 'px -' + (y * cy) + 'px';
+    }
+
+    let getCursorPos = (e) => {
+      e = e || window.event;
+      let a = img.getBoundingClientRect();
+      let x = e.pageX - a.left;
+      let y = e.pageY - a.top;
+      x = x - window.pageXOffset;
+      y = y - window.pageYOffset;
+      return {x : x, y : y};
+    }
+    lens.addEventListener('mousemove', moveLens);
+    img.addEventListener('mousemove', moveLens);
+
+  }
+
+  unzoom(e1){
+    let img = document.getElementById('mainPic');
+    let getCursorPos = (e) => {
+      e = e || window.event;
+      let a = img.getBoundingClientRect();
+      let x = e.pageX - a.left;
+      let y = e.pageY - a.top;
+      x = x - window.pageXOffset;
+      y = y - window.pageYOffset;
+      console.log({x : x, y : y})
+      return {x : x, y : y};
+    }
+    var coords = getCursorPos(e1);
+    if ((coords.x > 415 || coords.x < 80) || coords.y > 380) {
+      let zoomPic = document.getElementById('zoomPic');
+      zoomPic.style.display = 'none';
+      this.setState({
+        zoom: false
+      })
+    }
+  }
   render() {
     if(this.props.images.length){
       return (
-        <div class='mainContainer'>
+        <div className='mainContainer' id='mainContainer1'>
           <CarouselContainer>
             <a className='buttonContainer' id='topArrow' href='#0'>
                 <FontAwesomeIcon className='arrow' onClick={this.carouselArrow} icon={faChevronUp} />
@@ -127,8 +201,8 @@ class PhotoCarousel extends React.Component {
                 <FontAwesomeIcon className='arrow' onClick={this.carouselArrow} icon={faChevronDown} />
             </a>
           </CarouselContainer>
-            <MainPicture src={this.props.images[this.state.mainDisplay]}></MainPicture>
-            {/* <ZoomPicture src={this.props.images[this.state.mainDisplay]}></ZoomPicture> */}
+          <MainPicture id='mainPic' onMouseEnter={this.zoom} onMouseLeave={this.unzoom} src={this.props.images[this.state.mainDisplay]}></MainPicture>
+          <ZoomPicture id='zoomPic' ></ZoomPicture>
         </div>
       )
     } else {
@@ -138,3 +212,4 @@ class PhotoCarousel extends React.Component {
 }
 
 export default PhotoCarousel;
+

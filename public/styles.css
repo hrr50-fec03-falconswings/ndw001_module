@@ -131,3 +131,9 @@ body {
   display: block;
 }
 
+.zoom-lens {
+  position: absolute;
+  border: 1px solid gray;
+  width: 60px;
+  height: 80px;
+}

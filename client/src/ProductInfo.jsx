@@ -8,37 +8,37 @@ class ProductInfo extends React.Component{
 
   render(){
     return (
-      <div class="productInfo">
-        <div class='productDescriptionTitle'>
+      <div className="productInfo">
+        <div className='productDescriptionTitle'>
           {`${this.props.name}`}
         </div>
-        <div class='productDescriptionMetrics'>
-          <div class='stars'>
+        <div className='productDescriptionMetrics'>
+          <div className='stars'>
             <Ratings rating={this.props.rating} />
           </div>
 
-          <span class='rating'>{`(${this.props.rating})`}</span>
+          <span className='rating'>{`(${this.props.rating})`}</span>
 
-          <span class='ratingAmount'> {`${this.props.ratings_amt} ratings`} </span>
+          <span className='ratingAmount'> {`${this.props.ratings_amt} ratings`} </span>
 
-          <span class='commentsAmount'> {`${this.props.comments_amt} comments`} </span>
+          <span className='commentsAmount'> {`${this.props.comments_amt} comments`} </span>
 
-          <span class='storeSerial'> {`notWalmart#${this.props.currentId}`}</span>
+          <span className='storeSerial'> {`notWalmart#${this.props.currentId}`}</span>
         </div>
 
-        <div class='price'>
+        <div className='price'>
           {`$${this.props.price}.00`}
         </div>
 
-        <div class='availability'>
+        <div className='availability'>
           {`Only ${this.props.amt_left} left!`}
         </div>
-        <div class='addOns'>
-          <div class='topLine'>
-            <span class='addOnHeader'>Add-on Services </span>
+        <div className='addOns'>
+          <div className='topLine'>
+            <span className='addOnHeader'>Add-on Services </span>
             <span> (0 Selected) <u>Show Less</u></span>
           </div>
-          <div class='secondLine'>Add <u>Walmart protection plan</u> powered by Allstate</div>
+          <div className='secondLine'>Add <u>Walmart protection plan</u> powered by Allstate</div>
           <div><input type="radio"></input> None
           <input type="radio"></input> 3 Years - $38.00
           <input type="radio"></input> 4 Years - $45.00
