@@ -20,8 +20,7 @@ body {
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: 65% 35%;
+  display: flex;
 }
 
 .grid-item {
@@ -29,57 +28,48 @@ body {
   font-family: BogleRegular;
 }
 
-.productInfo {
-  display: grid;
-  grid-column: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "Title"
-    "Info"
-    "Blank"
-    "Price"
-    "MoreBlank"
-    "Availablility";
-}
-
 .productDescriptionTitle {
   font-size: 22px;
   font-weight: bold;
-  padding: 5px;
   color: black;
   font-family: BogleBold;
-
+  margin-bottom:5px;
 }
 
 .productDescriptionMetrics {
   display: flex;
   font-size: 12px;
-
+  margin-bottom:2.5em;
 }
 
 .stars {
-  font-weight: 200;
+  margin-right: 1em;
 }
 
 .empty {
-  color:rgb(253, 247, 247);
+  color:rgb(218, 218, 218);
 }
 
 .rating {
+  display: inline-block;
+  margin-right: 1em;
   color: gray;
 }
 
 .ratingAmount {
   text-decoration: underline;
+  margin-right: 1em;
+
 }
 
 .commentsAmount {
   text-decoration: underline;
+  margin-right: 1em;
+
 }
 
 .storeSerial {
   color: gray;
-
 }
 
 .price {
@@ -96,47 +86,54 @@ body {
   color: red;
   font-weight: bold;
   font-family: BogleBold;
+  margin-bottom:2.5em;
 }
 
-.picGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-areas:
-    "images main main main main"
-    "images main main main main"
-    "images main main main main"
-    "images main main main main"
-    "images main main main main"
-    "images main main main main"
+.addOns {
+  border: solid 1px rgb(218, 218, 218);
+  font-size: 12px;
+  padding: 1em;
 }
 
-.main {
-  grid-area: main;
+.addOns div {
+  margin-bottom: 1em;
+}
+
+.addOnHeader {
+  font-size: 14px;
+  font-family: BogleBold;
+}
+
+.secondLine {
+  font-size: 11px;
+}
+
+.mainContainer {
+  display: flex;
+  height: 467px;
+  width: 540px;
+  justify-content: space-between ;
 }
 
 .arrow {
   display: block;
   margin: 0 auto;
+  font-size: 12px;
+  color: gray;
 }
 
-.leftImages {
-  grid-area: images;
-  flex-direction: column;
-  /* overflow: scroll;
-  -webkit-overflow-scrolling: touch; */
-  /* overflow-y:auto; */
-  /* scroll-snap-type: y mandatory;
-  scroll-snap-align: start; */
-  overflow: hidden;
+#topArrow {
+  display: none;
+  margin-bottom: 20px;
 }
 
-.images {
-  max-width: 90%;
-  max-height: 80%;
+#bottomArrow {
+  display: block;
 }
 
-.main {
-  max-width: 100%;
-  max-height: 130%;
+.zoom-lens {
+  position: absolute;
+  border: 1px solid gray;
+  width: 60px;
+  height: 80px;
 }
